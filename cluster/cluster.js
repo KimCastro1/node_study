@@ -16,6 +16,9 @@ if (cluster.isMaster){
         res.writeHead(200, {'Content-Type':'text/html; charset=utf-8'})
         res.write('<h1>Hello Node!</h1>');
         res.end('<p>Hello Cluset</p>');
+        setTimeout(()=>{
+            process.exit(1);
+        },1000);
     }).listen(8006);
 
     console.log(`${process.pid} worker running`);
